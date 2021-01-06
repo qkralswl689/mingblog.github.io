@@ -1,5 +1,5 @@
 ---
 layout : category
-title : study
-excerpt : Study
+title : HTML
+excerpt : HTML
 ---
