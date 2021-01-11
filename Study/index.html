@@ -18,7 +18,7 @@ comments: false
 {% for item in (0..site.Study.size) %}{% unless forloop.last %}
   {% capture this_word %}{{ Study_list[item] | strip_newlines }}{% endcapture %}
 	<article>
-	<a href="{{site.url}}/study/{{this_word}}">
+	<a href="{{site.url}}/Study/{{this_word}}">
      <h2 id="{{ this_word }}" class="tag-heading">{{ this_word }}</h2>
     </a>
 	    <ul>
