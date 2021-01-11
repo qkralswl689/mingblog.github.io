@@ -1,0 +1,30 @@
+---
+layout: page
+title: Study Archive
+description: "An archive of posts sorted by Study."
+comments: false
+---
+
+{% capture site_Study %}{% for Study in site.Study %}{{ Study | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign Study_list = site_Study | split:',' | sort %}
+
+<ul class="entry-meta inline-list">
+  {% for item in (0..site.Study.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ Study_list[item] | strip_newlines }}{% endcapture %}
+  	<li><a href="#{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.Study[this_word].size }}</span></a></li>
+  {% endunless %}{% endfor %}
+</ul>
+
+{% for item in (0..site.Study.size) %}{% unless forloop.last %}
+  {% capture this_word %}{{ Study_list[item] | strip_newlines }}{% endcapture %}
+	<article>
+	<a href="{{site.url}}/study/{{this_word}}">
+     <h2 id="{{ this_word }}" class="tag-heading">{{ this_word }}</h2>
+    </a>
+	    <ul>
+    {% for post in site.Study[this_word] %}{% if post.title != null %}
+      <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endif %}{% endfor %}
+		</ul>
+	</article><!-- /.hentry -->
+{% endunless %}{% endfor %}
