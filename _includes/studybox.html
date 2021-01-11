@@ -5,7 +5,7 @@
 {% endcapture %}
 {% assign Study_list = site_Study | split:',' | sort %}
 
-<div class="study_box animated fadeIn">
+<div class="Study_box animated fadeIn">
     <h2> STUDY </h2>
     <ul>
        {% for item in (0..site.Study.size) %}{% unless forloop.last %}
