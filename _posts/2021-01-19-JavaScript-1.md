@@ -255,6 +255,7 @@ comments: true
     8. 객체
        - property와 method의 집합체(container)
        - .을 사용해 포함된 객체와 원소 이름을 연결해서 사용
+       - 객체를 생성하게 되면 기본적인 Property와 Method가 자동으로 객체에 포함된다
 
         : Object(property,method) -> 객체 안에 속성과 기능이 포함된다
         EX)
