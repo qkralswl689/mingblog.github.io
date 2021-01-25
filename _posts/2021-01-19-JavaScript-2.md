@@ -35,7 +35,42 @@ comments: true
 
     (** css : 실행시점과 상관없이 항상 모니터링하고 있기 때문에 해당 HTML Element가 있으면 항상 적용된다)
 
+    - $(document).ready() : HTML 콘텐츠 요소들이 모두 로딩된 후 실행되도록 해주는 함수 메소드
+      EX) EX) $(document).ready(function(){
+         // 실행 코드
+         });
 
+         = 같은 기능 인데 코드의 모양이 다르다 -> 편한거 쓰면된다
+
+         $(function(){
+          // 실행코드
+         });
+  - jQuery DOM 참색
+     : 부모
+       - parent()
+       - parents()
+     : 자식
+       - childeren()
+       - find()
+     EX)
+     html
+     : <div class="parent">
+          <div>HTML</div>
+          <div>CSS</div>
+          <div>Javascript</div>
+      </div>
+
+     jquery
+     :$(function(){
+        console.log( $('.parent').children()[0] );
+        console.log( $('.parent').children()[1] );
+        console.log( $('.parent').children()[2] );  
+      });
+
+      => 출력
+      - html
+      - css
+      - JavaScript
 
 
 
