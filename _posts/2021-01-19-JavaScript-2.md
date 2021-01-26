@@ -72,7 +72,8 @@ comments: true
       - css
       - JavaScript
 
-
+  - append(),preppend() - 해당요소의 자식요소로 생성
+  - after(),before() - 해당요소의 형제요소의 형태로 생송
 
 
 
