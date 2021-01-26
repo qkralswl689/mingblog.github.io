@@ -74,6 +74,8 @@ comments: true
 
   - append(),preppend() - 해당요소의 자식요소로 생성
   - after(),before() - 해당요소의 형제요소의 형태로 생송
+  - toggleClass() - 어트리뷰트가 있으면 삭제 없으면 추가해준다 -> addClass() + removeClass() = > css 간접컨트롤
+  - css() - 한번 변경하면 되돌릴 수 없다, 적용만 가능하다 => css 직접컨트롤
 
 
 
