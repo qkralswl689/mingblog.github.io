@@ -77,6 +77,10 @@ comments: true
   - toggleClass() - 어트리뷰트가 있으면 삭제 없으면 추가해준다 -> addClass() + removeClass() = > css 간접컨트롤
   - css() - 한번 변경하면 되돌릴 수 없다, 적용만 가능하다 => css 직접컨트롤
 
+  - setInterval() : 정해진 시간마다 '반복' 실행 => 시간 흐름에 따라 실행되는 함수
+  - setTimeout() : 정해진 지간후 한번 실행 => 시간 흐름에 따라 실행되는 함수
+
+  - clearInteval() : 지정된 함수의실행을 중지 시켜준다
 
 
 
@@ -99,20 +103,20 @@ comments: true
  head - html 의 첫번재 자식
  body - html의 마지막 자식
 
-innerHTML = property => 값을할당할 때 마다 업데이트 된다 -> w3schools(JavaScript-html dom methods)
+  innerHTML = property => 값을할당할 때 마다 업데이트 된다 -> w3schools(JavaScript-html dom methods)
 
 
-bom - 브라우저를 객체화 시켜 컨트롤
+  bom - 브라우저를 객체화 시켜 컨트롤
 
-JavaScript Window Location - 주소관련 내용이 담겨있는 객체
-JavaScript Window Navigator - 브라우저 자체정보
+  JavaScript Window Location - 주소관련 내용이 담겨있는 객체
+  JavaScript Window Navigator - 브라우저 자체정보
 
-AJAX - 페이지를 다시로드(새로고침)하지 않고 웹 페이지 업데이트
-     - 비동기 방식
-     - 프로그래밍 언어가 아니다
+  AJAX - 페이지를 다시로드(새로고침)하지 않고 웹 페이지 업데이트
+      - 비동기 방식
+      - 프로그래밍 언어가 아니다
 
-Framework(프레임워크) - 내가 만든 코드가 포함되는것(서브가 되는것) => 내가 만든 코드가 하나의 함수가 되어서 호출되어 사용되는것
-Library(라이브러리) - 내가 만든 코드 안으로 가지고들어오는것 => 내가 만든코드가 메인이 된다
-Plug-in(플러그인) - 어떠한 동작을 특화시켜놓은 코드모음 EX) jquery slider plugin 구글검색 하면 해당되는 코드를 찾을 수 있다
+  Framework(프레임워크) - 내가 만든 코드가 포함되는것(서브가 되는것) => 내가 만든 코드가 하나의 함수가 되어서 호출되어 사용되는것
+  Library(라이브러리) - 내가 만든 코드 안으로 가지고들어오는것 => 내가 만든코드가 메인이 된다
+  Plug-in(플러그인) - 어떠한 동작을 특화시켜놓은 코드모음 EX) jquery slider plugin 구글검색 하면 해당되는 코드를 찾을 수 있다
 
 ```
