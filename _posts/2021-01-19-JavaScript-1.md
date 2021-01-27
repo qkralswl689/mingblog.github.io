@@ -10,6 +10,7 @@ comments: true
 
 - JavaScript는 HTML 내용을 변경할 수 있다
 ##### - 자바스크립트 기본문법
+
 ```
   1. 변수
    - 변하는 수(값)
@@ -27,6 +28,7 @@ comments: true
       2. 블럭 범위 : if, for 같은 구문 블럭 내부 영역에 선언되는 변수의 범위
 
 ```
+![js문법](js문법.JPG)
 ```
    2. 연산자
     - 산술 연산자
@@ -40,7 +42,7 @@ comments: true
               : 프로그래밍 언어에서 카운트의 개념으로 사용
               a++ ( a += 1 )
               a-- ( a -= 1 )
-      @import "JS문법.JPG"
+        
     - 할당 연산자
       - = : 할당 연산자(변수에 값을 넣어줌)
       - +=, -=, *=, /= : 산술연산자  + 할당연산자
@@ -63,7 +65,10 @@ comments: true
           EX2) 5 === '5' : false ★ -> 사용권장
           EX3) 5 != '5' : false
           EX4) 5 !== '5' : true ★ -> 사용권장
-    @import "boolean.JPG"
+```          
+  
+![boolean](boolean.JPG)
+```    
     - 논리연산자
       - &&(AND), ||(OR), !(NOT)
       - AND, OR 논리 연산 : 비교 연산자들을 연결
