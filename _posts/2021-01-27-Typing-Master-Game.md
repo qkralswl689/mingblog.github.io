@@ -9,4 +9,4 @@ excerpt: "타이핑 게임하기"
 
 ### Typing Master Game
 
-(https://qkralswl689.github.io/mingblog.github.io/Typing-Master-Game/)
+<!-- (https://qkralswl689.github.io/mingblog.github.io/Typing-Master-Game/) -->
