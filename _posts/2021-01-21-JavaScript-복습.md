@@ -2,7 +2,7 @@
 layout: post
 title: "JavaScript - 복습"
 date: 2021-01-21
-category : [HTML+CSS+JavaScript]
+study : [HTML+CSS+JavaScript]
 comments: true
 ---
 
