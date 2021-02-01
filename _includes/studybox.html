@@ -1,0 +1,17 @@
+{% capture site_studies %}
+    {% for study in site.studies %}{{ study | first }}
+        {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+{% endcapture %}
+{% assign studies_list = site_cstudies | split:',' | sort %}
+
+<div class="study_box animated fadeIn">
+    <h2> STUDY </h2>
+    <ul>
+       {% for item in (0..site.studies.size) %}{% unless forloop.last %}
+            {% capture this_word %}{{ studies[item] | strip_newlines }}{% endcapture %}
+            <li><a href=" {{site.url}}/studies/{{this_word | strip }} "> {{ this_word }} </a></li>
+            <br/>
+       {% endunless %}{% endfor %}
+    </ul>
+</div>
