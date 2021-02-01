@@ -2,7 +2,7 @@
 layout: post
 title: "jQuery - 1"
 date: 2021-01-25
-study : [HTML+CSS+JavaScript]
+category : [HTML+CSS+JavaScript]
 comments: true
 ---
 

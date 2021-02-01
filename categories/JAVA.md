@@ -1,5 +1,5 @@
 ---
-layout : study
+layout : category
 title : JAVA
 excerpt : JAVA
 ---
