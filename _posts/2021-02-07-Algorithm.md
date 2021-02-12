@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CodeUp-1066"
+title: "CodeUp-1066-if"
 date: 2021-02-07
 category : [Algorithm]
 comments: true
