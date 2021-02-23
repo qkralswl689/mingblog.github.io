@@ -1,0 +1,265 @@
+---
+layout: post
+title: "JAVA-컬렉션 프레임워크-set"
+date: 2021-02-23
+category : [JAVA]
+comments: true
+---
+
+### ✔ List 컬렉션 Vector
+![vector](https://user-images.githubusercontent.com/65608960/108788658-d2266d80-75bb-11eb-819d-097a3a8f0f9a.JPG)
+
+
+### ✔ List 컬렉션 LinkedList
+
+    - ArrayList와 사용방법은 같으나 내부 구조가 다르다
+    - 인접 참조를 링크해 체인처럼 객체를 관리한다
+    - 특정 인덱스 객체를 제거하거나 삽입하면 앞뒤 링크만 변경되고 나머지 링크는 변경되지 않는다
+    
+### ✔ Set 컬렉션 
+![set](https://user-images.githubusercontent.com/65608960/108788550-912e5900-75bb-11eb-829b-80fd609f36fe.JPG)
+
+#### 💢 Set 요소 추가,나열,삭제,존재여부,전체삭제,set->배열 치환
+
+- 코드
+    ```java
+    package com.javateam.jse;
+
+    import java.util.HashSet;
+    import java.util.Iterator;
+    import java.util.Set;
+
+    public class JavaEx52 {
+
+        public static void main(String[] args) {
+
+            // @SuppressWarnings("rawtypes") // 경고 메세지를 무시하도록 조치
+            
+            //Set set = new HashSet();		
+            //Set<String> set = new HashSet<String>(); // (O)
+            Set<String> set = new HashSet<>(); // (O)
+
+            // 요소 추가
+            set.add("미니");
+            set.add("배현");
+            set.add("밍키");
+            set.add("신호");
+            set.add("꾸십");
+            set.add("뚱보");
+            set.add("멩");
+            set.add("달팽");
+            set.add("코끼리");
+            set.add("꾸십");
+            set.add("멩");
+            
+            // 중복을 허용하지 않는다
+            // System.out.println("set의 크기 : " + set.size());
+            
+            
+            // 전체 나열 : 연번(index)가 부재 => 다음 검색 방식(반복자 패턴)
+            
+            // 1) for문 이용
+            System.out.print("set 전체 요소  : ");
+            for(String s : set) {
+                System.out.print( s+" ");
+            }
+            
+            // 2) Iterator , while 이용
+    //		Iterator<String> it = set.iterator();
+    //		while(it.hasNext()) {
+    //			System.out.print(it.next() + " ");
+    //		}
+            
+            System.out.println();
+            // 요소 삭제
+            set.remove("멩");
+            System.out.print("'멩' 요소 삭제 후 set : ");
+            set.forEach(x->System.out.print( x + " "));
+
+            // 요소 존재 여부 확인
+            System.out.println("요소 존재 여부 : " + set.contains("코끼리"));		
+            
+            // 요소 전체 삭제
+            set.clear();
+            
+            System.out.println("요소 전체 삭제 후 set의 크기 : " + set.size());
+            
+            
+            //set -> 배열 지환(변환)
+            
+            //1) Object 이용
+            //Object setArr[] = set.toArray();		
+            //System.out.println(setArr[0]);
+            
+            //2) string 이용
+    //		String setArr2[] = new String[set.size()];
+    //		setArr2 = set.toArray(setArr2);
+    //		
+    //		System.out.println(setArr2[0]);
+        }
+
+    }
+    ```
+▶ Set 요소 추가,나열,삭제,존재여부,전체삭제,set->배열 치환 정리
+
+    - set :  요소의 중복을 허용하지 않는다 -> 중복 배제
+    - 요소 추가 : .add(문자열)
+    - 요소 나열 
+        1) for문 이용
+        2) Iterator 이용 => while문과 세트 
+    - 요소 삭제 : .remove(문자열) 
+    - 요소 존재 여부 확인 : .contains(문자열)
+    - 요소 전체 삭제 : .clear() 
+    - set => 배열 치환
+        1) Object 이용
+        2) String 이용
+
+▶ 위 코드 결과창 (Console)
+![set1](https://user-images.githubusercontent.com/65608960/108796487-381af100-75cc-11eb-9001-7bb6bde0d890.JPG)
+
+#### 💢 Set 유닛배열 생성,요소 한꺼번에 추가/삭제
+
+- 코드
+
+    ```java
+    package com.javateam.jse;
+
+    import java.util.Arrays;
+    import java.util.HashSet;
+    import java.util.Iterator;
+    import java.util.Set;
+
+    public class JavaEx53 {
+
+        public static void main(String[] args) {
+
+            
+            Set<String> set = new HashSet<>(); // (O)
+
+            // 요소 추가
+            String sosa[] = {"미니","배현","밍키","신호","꾸십","뚱보","멩","달팽","코끼리","꾸십","멩"};
+            
+            // 위의 배열에서 일부만  유닛배열 생성
+            String sosaUnit[] = {"신호","꾸십","미니"};
+            
+            // 배열 요소 한꺼번에 추가 : 배열 => 리스트(List) => 셋(set) : 이중 치환
+            set.addAll(Arrays.asList(sosa));
+            set.addAll(Arrays.asList(sosaUnit));
+            
+            System.out.print("sosaUnit 배열 요소 출력 : " + Arrays.asList(sosaUnit));
+            System.out.println();
+            // retainAll() : 요소 포함 확인 => set의  요소,크기 변경(요소 추가,삭제 시)
+            //System.out.println("요소(들) 포함 여부 확인 : "+set.retainAll(Arrays.asList(sosaUnit)));
+            System.out.println("유닛 배열의 요소(들) 포함 여부 확인 : "+set.retainAll(Arrays.asList(sosaUnit)));
+
+            // 배열 요소 한꺼번에 삭제
+            set.removeAll(Arrays.asList(sosa));
+            System.out.print("배열 요소 한꺼번에 삭제 후 요소 출력 : " + Arrays.asList(sosa));
+            
+            System.out.println();
+            // 유닛 배열 삭제
+            set.removeAll(Arrays.asList(sosaUnit));
+            System.out.println("유닛 배열 삭제 후 요소 출력 : " + Arrays.asList(sosa));
+            
+            System.out.println();
+            //System.out.println("set의 크기 : " + set.size());
+            //set.forEach(x->System.out.print(x + " "));		
+        
+        }
+
+    }
+    ```
+
+▶ Set 유닛배열 생성,요소 한꺼번에 추가/삭제 정리
+
+    - .addAll(Arrays.asList(배열이름)) : 배열 요소 한꺼번에 추가 : 배열 => 리스트(List) => 셋(set) : 이중 치환
+    - .retainAll() : 요소 포함 확인 => set의  요소,크기 변경(요소 추가,삭제 시)
+    - .removeAll : 배열 요소 한꺼번에 삭제 
+ 
+
+#### 💢 Set 요소 정렬
+
+- 코드
+
+    ```java
+    package com.javateam.jse;
+
+    import java.util.Arrays;
+    import java.util.Comparator;
+    import java.util.HashSet;
+    import java.util.Iterator;
+    import java.util.NavigableSet;
+    import java.util.Set;
+    import java.util.SortedSet;
+    import java.util.TreeSet;
+
+    public class JavaEx54 {
+
+        public static void main(String[] args) {
+
+            
+            // Set<String> set = new HashSet<>(); // (O)
+            
+            // TreeSet : 기본적으로 오름차순 정렬 지원
+            // Set<String> set = new TreeSet<>(); 
+            // TreeSet<String> set = new TreeSet<>();
+            
+            // SortedSet : 기본적으로 오름차순 정렬 지원
+            // SortedSet<String> set = new TreeSet<>(); 
+            
+            // NavigableSet : 기본적으로 오름차순 정렬 지원
+            NavigableSet<String> set = new TreeSet<>(); 
+
+            // 요소 추가
+            String sosa[] = {"미니","배현","밍키","신호","꾸십","뚱보","멩","달팽","코끼리","꾸십","멩"};
+            
+                
+            // 배열 요소 한꺼번에 추가 : 배열 => 리스트(List) => 셋(set) : 이중 치환
+            set.addAll(Arrays.asList(sosa));
+            
+            // 내림차순(descending) 정렬(sotrint/ordering)
+            
+            // 1) .descendingSet() : 셋(Set) 자체를 내림차순화 한다
+            // set = set.descendingSet();
+            //set.forEach(x->System.out.print(x + " "));
+            
+            // 2) Iterator : 내림차순이 지원되는 반복자 패턴 활용 
+    //		Iterator<String> it = set.descendingIterator();
+    //		while(it.hasNext()) {
+    //			System.out.print(it.next() + " ");
+    //		}
+            
+            // stream 치환 => 정렬  
+            // 오름차순
+            //set.stream().sorted(Comparator.naturalOrder()).forEach(x->System.out.print(x + " ")); 
+            // 내림차순
+            //set.stream().sorted(Comparator.reverseOrder()).forEach(x->System.out.print(x + " "));
+            
+                
+            // 일부분 추출
+            // subSet : 선택한 요소의 앞에있는 요소 출력 -> true 추가시 선택한 요소도 함께 출력된다
+            // set.subSet("꾸십",true,"멩",true).forEach(x->System.out.print(x + " "));
+            //set.subSet("바보",true,"안뇽",true).forEach(x->System.out.print(x + " "));
+
+            //set.headSet("배현",true).forEach(x->System.out.print(x + " "));
+            
+            //set.tailSet("배현",false).forEach(x->System.out.print(x + " "));
+            
+            // 첫번째/마지막 요소 추출
+            System.out.println("첫 요소 : " + set.first());
+            System.out.println("마지막 요소 : " + set.last());
+        }
+
+    }
+    ```
+
+▶  Set 요소 정렬 정리
+
+    - TreeSet : 기본적으로 오름차순 정렬 지원
+    - SortedSet : 기본적으로 오름차순 정렬 지원
+    - NavigableSet : 기본적으로 오름차순 정렬 지원
+    - .descendingSet() : 셋(Set) 자체를 내림차순화 한다
+    - Iterator : 내림차순이 지원되는 반복자 패턴 활용 
+    - .subSet() : 선택한 요소의 앞에있는 요소 출력 -> true 추가시 선택한 요소도 함께 출력된다
+    - .first() : 첫번째 요소 추출
+    - .last() : 마지막 요소 추출
