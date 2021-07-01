@@ -8,7 +8,7 @@ comments: true
 
 # 기술면접 - Spring MVC 작동 원리
 
-###🎈Spring MVC 작동 원리
+### 🎈Spring MVC 작동 원리
 ![springMVC](https://user-images.githubusercontent.com/65608960/123964406-55ceeb80-d9ee-11eb-83fb-79cc81bae62a.JPG)
 
     1. 클라이언트는 URL을 통해 요청을 전송한다.
@@ -20,19 +20,19 @@ comments: true
     7. 디스패처 서블릿은 컨트롤러에서 뷰에 전달할 데이터를 추가한다.
     8. 데이터가 추가된 뷰를 반환한다.
 
-###🎈 Spring MVC의 장점과 단점 그리고 SpringBoot
+### 🎈 Spring MVC의 장점과 단점 그리고 SpringBoot
 
-####🔹 장점
+#### 🔹 장점
 
     - 의존성 주입을 통해 컴포넌트 간의 결합도를 낮출 수 있어 단위테스트가 용이함
     - 제어의 역전을 통해 빈(객체)의 라이프싸이클에 관여하지 않고 개발에 집중할 수 있음
 
-####🔹 단점
+#### 🔹 단점
 
     - XML을 기반으로 하는 프로젝트 설정은 너무 많은 시간을 필요로 함
     - 톰캣과 같은 WAS를 별도로 설치해주어야 함
 
-####🔹 해결책(Spring Boot)
+#### 🔹 해결책(Spring Boot)
 
     - 자동설정(AutoConfiguration)을 도입하여 Dispatcher Servlet 등과 같은 설정 시간을 줄여줌
     - 프로젝트의 의존성을 독립적으로 선택하지 않고 spring-boot-starter로 모아두어 외부 도구들을 사용하기 편리함
